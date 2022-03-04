@@ -16,5 +16,21 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "main": "app.js",
+  "bin": {
+    "workoutapp-server-server": "bin/seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamBathoriKiss/Workout-App-Server-Side.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamBathoriKiss/Workout-App-Server-Side/issues"
+  },
+  "homepage": "https://github.com/AdamBathoriKiss/Workout-App-Server-Side#readme",
+  "description": ""
 }
