@@ -1,7 +1,8 @@
 const { Schema, model } = require("mongoose");
 
 const workoutSchema = new Schema({
-  nameOfWorkout: String,
+  nameOfWorkout:  { type: String, required: true },
+  user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   exercises:  [{ type: Schema.Types.ObjectId, ref: 'Exercises' }]
  
 });
