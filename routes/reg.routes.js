@@ -5,6 +5,7 @@ const Workouts = require("../models/Workouts.model");
  
 const router = express.Router();
 
+const Exercises = require("../models/Exercises.model");
  
 router.post('/register', (req, res, next) => {
     const { nameOfWorkout } = req.body;
@@ -26,8 +27,9 @@ router.post('/register', (req, res, next) => {
          } 
   
         return Workouts.create({ nameOfWorkout });
-
+        
       });
+   
     
     });
 
@@ -38,12 +40,20 @@ router.post('/register', (req, res, next) => {
       
       });
 
-      router.get('/delete/:id', (req, res) => {
-        const characterId = req.params.id;
-       
-        charactersApiHandler
-          .deleteCharacter(characterId)
-          .then(() => res.send(`Character deleted! Check the full characters list to test`))
+      router.get('/register/:workoutId', (req,res,next) => {
+        
+        Workouts.findById(req.params.workoutId)
+        .then(workoutsFromDb => res.json(workoutsFromDb))
+        .catch(err => res.json(err));
+        
+        });
+  
+
+
+      router.delete('/register/:workoutId', (req,res) => {
+     
+          Workouts.findByIdAndRemove(req.params.workoutId)
+          .then(() => res.json(`Workout deleted! Check the full characters list to test`))
           .catch(error => console.log(error));
       });
       

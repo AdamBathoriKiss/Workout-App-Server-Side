@@ -13,7 +13,8 @@ const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);  
 
 const regRouter = require("./routes/reg.routes");          
-app.use("/reg", regRouter);  
+app.use("/api", regRouter);  
+
 
 
 
