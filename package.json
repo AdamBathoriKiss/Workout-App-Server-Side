@@ -20,6 +20,9 @@
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "main": "app.js",
   "bin": {
     "workoutapp-server-server": "bin/seeds.js"
