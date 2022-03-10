@@ -7,7 +7,7 @@ const router = express.Router();
 
 const Exercises = require("../models/Exercises.model");
  
-router.post('/register', (req, res, next) => {
+router.post('api/register', (req, res, next) => {
     const { nameOfWorkout } = req.body;
   
     
