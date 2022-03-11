@@ -8,7 +8,7 @@ const router = express.Router();
 const Exercises = require("../models/Exercises.model");
  
 router.post('/register', (req, res, next) => {
-    const { nameOfWorkout } = req.body;
+    const { nameOfWorkout, exercises, numberOfReps, sets } = req.body;
   
     
     if (nameOfWorkout === '') {
@@ -26,7 +26,7 @@ router.post('/register', (req, res, next) => {
            return;
          } 
   
-        return Workouts.create({ nameOfWorkout });
+        return Workouts.create({ nameOfWorkout, exercises, numberOfReps, sets });
         
       });
    
