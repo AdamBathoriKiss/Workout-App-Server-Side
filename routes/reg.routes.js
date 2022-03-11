@@ -57,6 +57,19 @@ router.post('/register', (req, res, next) => {
           .then(() => res.json(`Workout deleted! Check the full characters list to test`))
           .catch(error => console.log(error));
       });
+
+      router.put('/register/:workoutId', (req, res, next) => {
+        const { workoutId } = req.params;
+       
+        if (!mongoose.Types.ObjectId.isValid(workoutId)) {
+          res.status(400).json({ message: 'Specified id is not valid' });
+          return;
+        }
+       
+        Workouts.findByIdAndUpdate(workoutId, req.body, { new: true })
+          .then((updatedWorkout) => res.json(updatedWorkout))
+          .catch(error => res.json(error));
+      });
       
     
   module.exports = router;
