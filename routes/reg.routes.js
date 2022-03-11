@@ -40,6 +40,7 @@ router.post('/register', (req, res, next) => {
       
       });
 
+
       router.get('/register/:workoutId', (req,res,next) => {
         
         Workouts.findById(req.params.workoutId)

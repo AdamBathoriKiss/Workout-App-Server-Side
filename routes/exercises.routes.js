@@ -14,5 +14,6 @@ Exercises.find()
 
 });
 
+
  
 module.exports = router;
