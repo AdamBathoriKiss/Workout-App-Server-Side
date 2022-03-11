@@ -2,6 +2,7 @@
 const express = require("express");
 
 const Workouts = require("../models/Workouts.model");
+const mongoose = require('mongoose');
  
 const router = express.Router();
 
