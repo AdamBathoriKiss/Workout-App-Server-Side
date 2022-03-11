@@ -59,7 +59,7 @@ router.post('/register', (req, res, next) => {
       });
 
       router.put('/register/:workoutId', (req, res, next) => {
-        const  workoutId  = req.params;
+        const  {workoutId}  = req.params;
        
         if (!mongoose.Types.ObjectId.isValid(workoutId)) {
           res.status(400).json({ message: 'Specified id is not valid' });
